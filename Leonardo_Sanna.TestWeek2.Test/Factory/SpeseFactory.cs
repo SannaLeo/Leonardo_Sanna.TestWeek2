@@ -9,6 +9,10 @@ namespace Leonardo_Sanna.TestWeek2.Test.Factory
 {
     internal class SpeseFactory
     {
+        /// <summary>
+        /// richiesta dall'utente per salvare le spese, deprecato in quanto non era nella consegna
+        /// </summary>
+        /// <returns>Spesa spesa</returns>
         public static Spesa GetSpese()
         {
             DateTime data;

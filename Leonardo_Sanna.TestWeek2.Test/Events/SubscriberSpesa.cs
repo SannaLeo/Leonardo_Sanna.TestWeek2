@@ -24,7 +24,7 @@ namespace Leonardo_Sanna.TestWeek2.Test.Events
         //Metodo che gestice la ricezione della notifica
         public void OnNotificationReceived(Spesa s)
         {
-            //L'evento scatena una stampa su console
+            //L'evento scatena una scritura su file della singola spesa
             string path = @"D:\Lavoro\lezioni\codice\Leonardo_Sanna.TestWeek2\Leonardo_Sanna.TestWeek2.Test\FilesTXT\spese.txt";
             using (var sw = new StreamWriter(path))
             {

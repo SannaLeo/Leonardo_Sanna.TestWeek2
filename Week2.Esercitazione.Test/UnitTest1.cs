@@ -99,7 +99,7 @@ namespace Week2.Esercitazione.Test
         public void ShouldNotBeAprovata()
         {
             
-            //Spese elaborate che non dovrebbero essere elaborate
+            //Spese elaborate che non dovrebbero essere approvate
 
             IHandler MGR, OPM, CEO;
             MGR = new ManagerHandler();

@@ -24,12 +24,13 @@ namespace Leonardo_Sanna.TestWeek2.Test.Events
         //Metodo che gestice la ricezione della notifica
         public void OnNotificationReceived(List<SpesaElaborata> spese)
         {
-            //L'evento scatena una stampa su console
+            //L'evento scatena una scrittura su file della lista
             string path = @"D:\Lavoro\lezioni\codice\Leonardo_Sanna.TestWeek2\Leonardo_Sanna.TestWeek2.Test\FilesTXT\spese_elaborate.txt";
             using (var sw = new StreamWriter(path))
             {
                 foreach(SpesaElaborata s in spese)
                 {
+                    //in base allo stato della spesa salvo diverse cose
                     if (s.Approvazione.Equals("RESPINTA"))
                     {
                         sw.WriteLine($"{s.Data.ToShortDateString()};{s.Categoria};{s.Descrizione};{s.Approvazione};-;");

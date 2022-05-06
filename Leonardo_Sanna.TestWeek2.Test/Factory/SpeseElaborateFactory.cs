@@ -12,6 +12,10 @@ namespace Leonardo_Sanna.TestWeek2.Test.Factory
      public static class SpeseElaborateFactory
      {
         public static string pathr = @"D:\Lavoro\lezioni\codice\Leonardo_Sanna.TestWeek2\Leonardo_Sanna.TestWeek2.Test\FilesTXT\spese.txt";
+        /// <summary>
+        /// Ritorna una lista di spese elaborate prese da un file di spese normali
+        /// </summary>
+        /// <returns>List<SpeseElaborate> speseElaborate</returns>
         public static List<SpesaElaborata> GetSpeseElaborate()
         {
             IHandler MGR, OPM, CEO;
@@ -53,27 +57,39 @@ namespace Leonardo_Sanna.TestWeek2.Test.Factory
                         return speseElaborate;
                     }
                     livApprovazione = MGR.Handle(importo);
+                    //controllo che la chain non mi abbia restituito una spesa respinta
                     if (livApprovazione != "RESPINTA")
                     {
+                        //chiamo il metodo Factory
                         spesaElaborata = GetSpesaFromCategoria(categoria, importo);
                     }
                     else
                     {
+                        //assegno categoria e importo per le spese respinte
                         spesaElaborata.Categoria = categoria;
                         spesaElaborata.Importo = importo;
                     }
+                    //assegno i dati rimanenti
                     spesaElaborata.Approvazione = livApprovazione;
                     spesaElaborata.Descrizione = descrizione;
                     spesaElaborata.Data = data;
+                    //stampo e aggiungo alla lista che verrà poi salvata su  file
                     Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
                     Console.WriteLine(spesaElaborata);
                     Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
                     speseElaborate.Add(spesaElaborata);
                 }
             }
+            //pubblico l'evento per il salvataggio su file
             publisherSpesaEl.Publish(speseElaborate);
             return speseElaborate;
         }
+        /// <summary>
+        /// restituisce la spesa elaborata con l'importo rimborsato calcolato in base alla categoria
+        /// </summary>
+        /// <param name="categoria">categoria della spesa</param>
+        /// <param name="importo">importo di partenza, ossia della spesa</param>
+        /// <returns>SpesaElaborata spesa</returns>
         public static SpesaElaborata GetSpesaFromCategoria(string categoria, double importo)
         {
             double importoRimborsato;
