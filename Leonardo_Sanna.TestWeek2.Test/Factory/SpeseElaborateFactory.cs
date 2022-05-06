@@ -12,6 +12,8 @@ namespace Leonardo_Sanna.TestWeek2.Test.Factory
      public static class SpeseElaborateFactory
      {
         public static string pathr = @"D:\Lavoro\lezioni\codice\Leonardo_Sanna.TestWeek2\Leonardo_Sanna.TestWeek2.Test\FilesTXT\spese.txt";
+
+
         /// <summary>
         /// Ritorna una lista di spese elaborate prese da un file di spese normali
         /// </summary>

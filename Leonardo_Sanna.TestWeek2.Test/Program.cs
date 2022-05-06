@@ -2,15 +2,15 @@
 using Leonardo_Sanna.TestWeek2.Test.Factory;
 using Leonardo_Sanna.TestWeek2.Test.Events;
 
-//PublisherSpesa publisherSpesaNormale = new();
-//SubscriberSpesa subspesa = new();
+//PublisherSpesaEl publisherSpesaEl = new();
 //SubscriberSpesaElaborata subspesael = new();
 //subspesael.Subscribe(publisherSpesaEl);
-//subspesa.Subscribe(publisherSpesaNormale);
-//Spese spesa;
-//SpesaElaborata spesaElaborata;
-//spesa = SpeseFactory.GetSpese();
+//var speseElaborate = SpeseElaborateFactory.GetSpeseElaborate();
+//publisherSpesaEl.Publish(speseElaborate);
 
+
+//il metodo statico avvia la fase di letture e scrittura da file.
+//Ma è possibile anche effetturle da qua (anche più logico) usando la parte commentata sopra
 SpeseElaborateFactory.GetSpeseElaborate();
 
 
