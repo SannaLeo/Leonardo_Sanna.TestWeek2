@@ -1,0 +1,2 @@
+10/05/2022;Alloggio;alloggio a roma;350
+10/05/2022;Altro;vestito;50
